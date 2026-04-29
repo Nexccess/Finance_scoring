@@ -540,28 +540,7 @@ input[type="file"]{padding:8px 12px;height:auto;cursor:pointer;font-size:13px}
 ════════════════════════════ -->
 <div class="phase active" id="phaseInput">
 
-  <!-- CSV Import -->
-  <div class="sec">
-    <div class="sec-head">
-      <div class="sec-icon">📥</div>
-      <span class="sec-title">CSVインポート</span>
-    </div>
-    <div class="sec-body">
-      <div class="csv-area">
-        <div class="csv-label"><strong>CSVファイルを読み込む</strong><br>テンプレートに合わせたCSVを選択してください</div>
-        <button class="btn-sm" onclick="downloadTemplate()">📄 テンプレートDL</button>
-        <label style="text-transform:none;font-size:12px;font-weight:500;color:var(--text2);cursor:pointer;
-          background:var(--surf);border:1px solid var(--border);border-radius:7px;
-          padding:0 14px;height:34px;display:inline-flex;align-items:center;gap:6px">
-          📂 CSVを選択
-          <input type="file" accept=".csv" id="csvFile" onchange="importCSV(this)" style="display:none">
-        </label>
-      </div>
-      <div id="csvAlert" class="alert warn" style="display:none"></div>
-    </div>
-  </div>
-
-  <!-- P1: 案件基本情報 -->
+   <!-- P1: 案件基本情報 -->
   <div class="sec">
     <div class="sec-head">
       <div class="sec-icon">📁</div>
@@ -598,7 +577,7 @@ input[type="file"]{padding:8px 12px;height:auto;cursor:pointer;font-size:13px}
       <div id="purposeAlert" class="alert warn">▲ 要注意資金使途です。追加ヒアリングを推奨します。</div>
       <div class="g2" style="margin-top:14px">
         <div class="field">
-          <label>希望調達額 <span class="unit">（円）</span></label>
+          <label>希望調達額 <span class="unit">（万円）</span></label>
           <input type="text" inputmode="numeric" id="amount" class="num-input" value="5,000,000" autocomplete="off">
         </div>
         <div class="field">
@@ -618,52 +597,52 @@ input[type="file"]{padding:8px 12px;height:auto;cursor:pointer;font-size:13px}
     <div class="sec-body">
       <div class="g2 mb">
         <div class="field">
-          <label>年商・前期実績 <span class="unit">（円）</span></label>
+          <label>年商・前期実績 <span class="unit">（万円）</span></label>
           <input type="text" inputmode="numeric" id="sales_prev" class="num-input" oninput="checkDiv()" value="100,000,000" autocomplete="off">
         </div>
         <div class="field">
-          <label>年商・今期予測 <span class="unit">（円）</span></label>
+          <label>年商・今期予測 <span class="unit">（万円）</span></label>
           <input type="text" inputmode="numeric" id="sales_curr" class="num-input" oninput="checkDiv()" value="100,000,000" autocomplete="off">
         </div>
       </div>
       <div id="salesAlert" class="alert warn"></div>
       <div class="g2 mb" style="margin-top:14px">
         <div class="field">
-          <label>営業利益・前期実績 <span class="unit">（円）</span></label>
+          <label>営業利益・前期実績 <span class="unit">（万円）</span></label>
           <input type="text" inputmode="numeric" id="op_prev" class="num-input" value="5,000,000" autocomplete="off">
         </div>
         <div class="field">
-          <label>営業利益・今期予測 <span class="unit">（円）</span></label>
+          <label>営業利益・今期予測 <span class="unit">（万円）</span></label>
           <input type="text" inputmode="numeric" id="op_curr" class="num-input" value="5,000,000" autocomplete="off">
         </div>
       </div>
       <div class="g2 mb">
         <div class="field">
-          <label>減価償却費 <span class="unit">（円）</span></label>
+          <label>減価償却費 <span class="unit">（万円）</span></label>
           <input type="text" inputmode="numeric" id="dep" class="num-input" value="0" autocomplete="off">
         </div>
         <div class="field">
-          <label>現預金残高 <span class="unit">（円）</span></label>
+          <label>現預金残高 <span class="unit">（万円）</span></label>
           <input type="text" inputmode="numeric" id="cash" class="num-input" value="3,000,000" autocomplete="off">
         </div>
       </div>
       <div class="g2 mb">
         <div class="field">
-          <label>借入総額・有利子負債 <span class="unit">（円）</span></label>
+          <label>借入総額・有利子負債 <span class="unit">（万円）</span></label>
           <input type="text" inputmode="numeric" id="debt" class="num-input" value="30,000,000" autocomplete="off">
         </div>
         <div class="field">
-          <label>純資産・自己資本 <span class="unit">（円）</span></label>
+          <label>純資産・自己資本 <span class="unit">（万円）</span></label>
           <input type="text" inputmode="numeric" id="equity" class="num-input" value="20,000,000" autocomplete="off">
         </div>
       </div>
       <div class="g2">
         <div class="field">
-          <label>役員借入金 <span class="unit">（円）</span></label>
+          <label>役員借入金 <span class="unit">（万円）</span></label>
           <input type="text" inputmode="numeric" id="exec_loan" class="num-input" value="0" autocomplete="off">
         </div>
         <div class="field">
-          <label>役員貸付金 <span class="unit">（円）</span></label>
+          <label>役員貸付金 <span class="unit">（万円）</span></label>
           <input type="text" inputmode="numeric" id="exec_lending" class="num-input" value="0" autocomplete="off">
         </div>
       </div>
@@ -823,13 +802,6 @@ input[type="file"]{padding:8px 12px;height:auto;cursor:pointer;font-size:13px}
     <div class="sec-body"><div id="res-flags"></div></div>
   </div>
 
-  <!-- Actions -->
-  <div class="res-actions">
-    <button class="btn-pdf" onclick="printPDF()">🖨 PDF出力</button>
-    <button class="btn-csv-out" onclick="exportCSV()">📤 結果CSVエクスポート</button>
-    <button class="btn-restart" onclick="restart()">← 別の案件を入力</button>
-  </div>
-
   <div class="disclaimer">
     <div class="disc-summary">
       ※ 本システムの判定は一次スクリーニング用途です。最終判断は担当者の責任において行ってください。
@@ -973,7 +945,7 @@ function runScore(){
   const co=d.company||'（会社名未入力）';
   document.getElementById('res-avatar').textContent=co.charAt(0)||'?';
   document.getElementById('res-company').textContent=co;
-  document.getElementById('res-sub').textContent=d.industry+' ／ 希望調達額：'+d.amount.toLocaleString('ja-JP')+'円';
+  document.getElementById('res-sub').textContent=d.industry+' ／ 希望調達額：'+d.amount.toLocaleString('ja-JP')+'万円';
 
   // Gauge animation
   const totalRounded=Math.round(r.total*10)/10;
@@ -999,7 +971,7 @@ function runScore(){
   document.getElementById('kpi-op').innerHTML=(r.op_rate*100).toFixed(2)+'<span class="kpi-unit">%</span>';
 
   // Route
-  const rNames={A:'ルートA：自社融資',B:'ルートB：自社ファクタリング',C:'ルートC：外部ノンバンク送客'};
+  const rNames={A:'ルート：融資検討可能',B:'ルート：ファクタリングの方が優位な可能性あり', C:'ルート：ノンバンク検討の可能性あり'};
   const banner=document.getElementById('res-route-banner');
   banner.className='route-banner route-'+r.route;
   banner.textContent=rNames[r.route];
@@ -1038,18 +1010,18 @@ function runScore(){
 function buildPrintSummary(d){
   const rows=[
     ['会社名',d.company||'（未入力）'],['業種',d.industry],['設立年数',d.years+'年'],
-    ['資金使途',d.purpose],['希望調達額',d.amount.toLocaleString('ja-JP')+'円'],
+    ['資金使途',d.purpose],['希望調達額',d.amount.toLocaleString('ja-JP')+'万円'],
     ['希望返済期間',d.repayment+'ヶ月'],
-    ['年商・前期',d.sales_prev.toLocaleString('ja-JP')+'円'],
-    ['年商・今期',d.sales_curr.toLocaleString('ja-JP')+'円'],
-    ['営業利益・前期',d.op_prev.toLocaleString('ja-JP')+'円'],
-    ['営業利益・今期',d.op_curr.toLocaleString('ja-JP')+'円'],
-    ['減価償却費',d.dep.toLocaleString('ja-JP')+'円'],
-    ['現預金残高',d.cash.toLocaleString('ja-JP')+'円'],
-    ['借入総額',d.debt.toLocaleString('ja-JP')+'円'],
-    ['純資産',d.equity.toLocaleString('ja-JP')+'円'],
-    ['役員借入金',d.exec_loan.toLocaleString('ja-JP')+'円'],
-    ['役員貸付金',d.exec_lending.toLocaleString('ja-JP')+'円'],
+    ['年商・前期',d.sales_prev.toLocaleString('ja-JP')+'万円'],
+    ['年商・今期',d.sales_curr.toLocaleString('ja-JP')+'万円'],
+    ['営業利益・前期',d.op_prev.toLocaleString('ja-JP')+'万円'],
+    ['営業利益・今期',d.op_curr.toLocaleString('ja-JP')+'万円'],
+    ['減価償却費',d.dep.toLocaleString('ja-JP')+'万円'],
+    ['現預金残高',d.cash.toLocaleString('ja-JP')+'万円'],
+    ['借入総額',d.debt.toLocaleString('ja-JP')+'万円'],
+    ['純資産',d.equity.toLocaleString('ja-JP')+'万円'],
+    ['役員借入金',d.exec_loan.toLocaleString('ja-JP')+'万円'],
+    ['役員貸付金',d.exec_lending.toLocaleString('ja-JP')+'万円'],
     ['不動産担保',d.real_estate?'有':'無'],['証券担保',d.securities?'有':'無'],
     ['売掛先属性',d.receivable],['税金滞納',d.tax_delinquent?'有':'無']
   ];
@@ -1111,21 +1083,6 @@ function restart(){
   document.getElementById('bar-profit').style.width='0%';
   document.getElementById('gaugeArc').style.strokeDashoffset='220';
   showPhase('phaseInput');setStep(1);
-}
-
-// ─── CSV Template Download ───
-const CSV_HEADERS=['会社名','業種','設立年数(年)','資金使途','希望調達額(円)','希望返済期間(月)',
-  '年商前期(円)','年商今期(円)','営業利益前期(円)','営業利益今期(円)',
-  '減価償却費(円)','現預金残高(円)','借入総額(円)','純資産(円)',
-  '役員借入金(円)','役員貸付金(円)','不動産担保(有/無)','証券担保(有/無)',
-  '売掛先属性(A/B/C/D)','税金滞納(有/無)'];
-
-function downloadTemplate(){
-  const sample=['テスト株式会社','製造業','5','増加運転資金','5000000','36',
-    '100000000','100000000','5000000','5000000','0','3000000','30000000','20000000',
-    '0','0','無','無','A','無'];
-  const csv=CSV_HEADERS.join(',')+'\n'+sample.join(',');
-  dlCSV(csv,'nexcess_scoring_template.csv');
 }
 
 function dlCSV(content,filename){
