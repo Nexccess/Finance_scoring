@@ -12,45 +12,59 @@
    Variables & Reset
 ═══════════════════════════════════════ */
 :root {
-  --c1:      #192f60;
-  --c2:      #1a4a6b;
-  --c3:      #2f3e64;
-  --gold:    #c8a45a;
-  --gold-lt: #e8d49a;
-  --gold-bg: rgba(200,164,90,0.09);
-  --gold-bdr:rgba(200,164,90,0.45);
-  --c1a:     rgba(25,47,96,0.06);
-  --c2a:     rgba(26,74,107,0.10);
-  --bg:      #f4f6fb;
-  --surf:    #ffffff;
-  --surf2:   #f8fafd;
-  --border:  #dce3ee;
-  --border2: #eaeff8;
-  --text:    #1c2e4a;
-  --text2:   #3d5470;
-  --text3:   #6b82a0;
-  --green:   #0a5c47; --green-bg: #e6f5f0; --green-bdr: #1D9E75;
-  --lime:    #2d5a10; --lime-bg:  #edf5e2; --lime-bdr:  #5a9020;
-  --amber:   #5a3800; --amber-bg: #fdf3e0; --amber-bdr: #c8a45a;
-  --warn:    #5a3800; --warn-bg:  #fdf3e0; --warn-bdr:  #c8a45a;
-  --err:     #5a3800; --err-bg:   #fdf3e0; --err-bdr:   #c8a45a;
-  --shadow:  0 2px 20px rgba(25,47,96,0.07);
-  --shadow2: 0 4px 28px rgba(25,47,96,0.11);
+  --c1:       #2C3E50;
+  --c2:       #4A5568;
+  --c3:       #374151;
+  --accent:   rgba(44, 62, 80, 0.85);
+  --accent-lt:rgba(44, 62, 80, 0.50);
+  --accent-bg:rgba(44, 62, 80, 0.06);
+  --accent-bdr:rgba(44, 62, 80, 0.25);
+  --c1a:      rgba(44, 62, 80, 0.06);
+  --c2a:      rgba(74, 85, 104, 0.10);
+  --bg:       #F8F9FA;
+  --surf:     #ffffff;
+  --surf2:    #F8F9FA;
+  --border:   #CED4DA;
+  --border2:  #DEE2E6;
+  --text:     #333333;
+  --text2:    #495057;
+  --text3:    #868E96;
+  --green:    #1a6b4a; --green-bg:  #e8f5f0; --green-bdr:  #28a97c;
+  --lime:     #3a6b1a; --lime-bg:   #edf5e2; --lime-bdr:   #5a9020;
+  --amber:    #6b4a00; --amber-bg:  #fdf5e0; --amber-bdr:  #b8860b;
+  --warn:     #6b4a00; --warn-bg:   #fdf5e0; --warn-bdr:   #b8860b;
+  --err:      #8B0000; --err-bg:    #fdf0f0; --err-bdr:    #c0392b;
+  --shadow:   0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow2:  0 2px 6px rgba(0,0,0,0.07);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN',sans-serif;
-  background:var(--bg);color:var(--text);font-size:15px;line-height:1.75;min-height:100vh}
+body{
+  font-family:"UD Digi Kyokasho NP-R","BIZ UDGothic","Meiryo",sans-serif;
+  background:var(--bg);color:var(--text);font-size:15px;line-height:1.75;min-height:100vh
+}
 
 /* ═══════════════════════════════════════
    Header
 ═══════════════════════════════════════ */
-header{background:var(--c1);position:sticky;top:0;z-index:300;box-shadow:0 2px 20px rgba(25,47,96,0.3);border-bottom:1px solid var(--gold-bdr)}
+header{
+  background:var(--accent);
+  position:sticky;top:0;z-index:300;
+  box-shadow:0 1px 8px rgba(0,0,0,0.18);
+  border-bottom:1px solid rgba(44,62,80,0.35);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px)
+}
 .hdr{max-width:840px;margin:0 auto;height:56px;padding:0 24px;display:flex;align-items:center;gap:14px}
 .hdr-logo{height:36px;width:auto}
-.hdr-div{width:1px;height:24px;background:rgba(255,255,255,0.2)}
-.hdr-title{color:rgba(255,255,255,0.9);font-size:14px;font-weight:400;letter-spacing:0.08em;font-family:'Cormorant Garamond',serif}
-.hdr-badge{margin-left:auto;background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.6);
-  font-size:11px;padding:3px 10px;border-radius:20px;border:1px solid rgba(255,255,255,0.15)}
+.hdr-div{width:1px;height:24px;background:rgba(255,255,255,0.25)}
+.hdr-title{
+  color:rgba(255,255,255,0.90);font-size:14px;font-weight:400;letter-spacing:0.08em;
+  font-family:"UD Digi Kyokasho NP-R","BIZ UDGothic","Meiryo",sans-serif
+}
+.hdr-badge{
+  margin-left:auto;background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);
+  font-size:11px;padding:3px 10px;border-radius:3px;border:1px solid rgba(255,255,255,0.18)
+}
 
 /* ═══════════════════════════════════════
    Step Progress Bar
@@ -59,17 +73,18 @@ header{background:var(--c1);position:sticky;top:0;z-index:300;box-shadow:0 2px 2
 .step-inner{max-width:840px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;gap:0}
 .step-item{display:flex;align-items:center;gap:8px;flex:1}
 .step-item:last-child{flex:0}
-.step-circle{width:28px;height:28px;border-radius:50%;border:2px solid var(--border);
+.step-circle{
+  width:28px;height:28px;border-radius:50%;border:2px solid var(--border);
   background:var(--surf2);display:flex;align-items:center;justify-content:center;
-  font-size:12px;font-weight:500;color:var(--text3);flex-shrink:0;transition:all .3s}
-.step-circle.done{background:var(--gold);border-color:var(--gold);color:#fff}
-.step-circle.active{background:var(--c1);border-color:var(--c1);color:#fff;
-  box-shadow:0 0 0 3px var(--gold-bg)}
+  font-size:12px;font-weight:500;color:var(--text3);flex-shrink:0;transition:all .3s
+}
+.step-circle.done{background:var(--c2);border-color:var(--c2);color:#fff}
+.step-circle.active{background:var(--c1);border-color:var(--c1);color:#fff;box-shadow:0 0 0 3px var(--accent-bg)}
 .step-label{font-size:11px;font-weight:500;color:var(--text3);transition:color .3s;white-space:nowrap}
 .step-label.active{color:var(--c1)}
-.step-label.done{color:var(--gold)}
+.step-label.done{color:var(--c2)}
 .step-line{flex:1;height:1px;background:var(--border2);margin:0 10px}
-.step-line.done{background:var(--gold-bdr)}
+.step-line.done{background:var(--c2)}
 
 /* ═══════════════════════════════════════
    Page
@@ -79,13 +94,22 @@ header{background:var(--c1);position:sticky;top:0;z-index:300;box-shadow:0 2px 2
 /* ═══════════════════════════════════════
    Section Card
 ═══════════════════════════════════════ */
-.sec{background:var(--surf);border:1px solid var(--border2);border-radius:12px;
-  margin-bottom:16px;overflow:hidden;box-shadow:var(--shadow)}
-.sec-head{background:var(--surf2);border-bottom:1px solid var(--border2);
-  padding:13px 18px;display:flex;align-items:center;gap:10px;border-left:3px solid var(--gold-bdr)}
-.sec-icon{width:26px;height:26px;border-radius:6px;background:var(--gold-bg);border:1px solid var(--gold-bdr);
-  display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--c1);flex-shrink:0}
-.sec-title{font-size:14px;font-weight:500;color:var(--c1);font-family:'Cormorant Garamond',serif;letter-spacing:0.03em}
+.sec{
+  background:var(--surf);border:1px solid var(--border);border-radius:6px;
+  margin-bottom:16px;overflow:hidden;box-shadow:var(--shadow)
+}
+.sec-head{
+  background:var(--surf2);border-bottom:1px solid var(--border);
+  padding:13px 18px;display:flex;align-items:center;gap:10px;border-left:3px solid var(--c2)
+}
+.sec-icon{
+  width:26px;height:26px;border-radius:4px;background:var(--accent-bg);border:1px solid var(--accent-bdr);
+  display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--c1);flex-shrink:0
+}
+.sec-title{
+  font-size:14px;font-weight:500;color:var(--c1);
+  font-family:"UD Digi Kyokasho NP-R","BIZ UDGothic","Meiryo",sans-serif;letter-spacing:0.02em
+}
 .sec-body{padding:18px}
 
 /* ═══════════════════════════════════════
@@ -96,56 +120,75 @@ header{background:var(--c1);position:sticky;top:0;z-index:300;box-shadow:0 2px 2
 @media(max-width:580px){.g2,.g3{grid-template-columns:1fr}}
 .field{display:flex;flex-direction:column;gap:5px}
 .mb{margin-bottom:14px}
-label{font-size:12px;font-weight:400;color:var(--text2);letter-spacing:0.05em;text-transform:uppercase}
+label{
+  font-size:12px;font-weight:400;color:var(--text2);letter-spacing:0.05em;text-transform:uppercase;
+  font-family:"UD Digi Kyokasho NP-R","BIZ UDGothic","Meiryo",sans-serif
+}
 label .unit{font-weight:400;color:var(--text3);text-transform:none}
 
 input[type="text"],input[type="number"],select,input[type="file"]{
-  height:40px;width:100%;border:1px solid var(--border);border-radius:8px;
+  height:40px;width:100%;border:1px solid var(--border);border-radius:4px;
   padding:0 12px;font-size:14px;color:var(--text);background:var(--surf);
-  font-family:inherit;outline:none;transition:border-color .15s,box-shadow .15s;-webkit-appearance:none}
-input:focus,select:focus{border-color:var(--c2);box-shadow:0 0 0 3px var(--c2a)}
+  font-family:"UD Digi Kyokasho NP-R","BIZ UDGothic","Meiryo",sans-serif;
+  outline:none;transition:border-color .15s,box-shadow .15s;-webkit-appearance:none
+}
+input:focus,select:focus{border-color:var(--c1);box-shadow:0 0 0 2px var(--c2a)}
 input::placeholder{color:var(--text3)}
-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='%2393a5b8'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;background-position:right 10px center;padding-right:30px;cursor:pointer}
+select{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='%236c757d'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 10px center;padding-right:30px;cursor:pointer
+}
 input[type="file"]{padding:8px 12px;height:auto;cursor:pointer;font-size:13px}
 .num-display{/* used for comma-formatted display */}
 
 /* ═══════════════════════════════════════
    Alerts
 ═══════════════════════════════════════ */
-.alert{display:none;border-radius:8px;padding:9px 14px;font-size:12px;font-weight:500;
-  margin-top:8px;border-left:3px solid}
+.alert{
+  display:none;border-radius:4px;padding:9px 14px;font-size:12px;font-weight:500;
+  margin-top:8px;border-left:3px solid
+}
 .alert.warn{background:var(--warn-bg);border-color:var(--warn-bdr);color:var(--warn)}
 .alert.err{background:var(--err-bg);border-color:var(--err-bdr);color:var(--err)}
 .alert.show{display:block}
-.field-err{border-color:var(--err-bdr)!important;box-shadow:0 0 0 3px rgba(217,74,58,0.15)!important}
+.field-err{border-color:var(--err-bdr)!important;box-shadow:0 0 0 2px rgba(192,57,43,0.12)!important}
 
 /* ═══════════════════════════════════════
    CSV
 ═══════════════════════════════════════ */
-.csv-area{background:var(--surf2);border:1.5px dashed var(--border);border-radius:10px;
-  padding:16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.csv-area{
+  background:var(--surf2);border:1.5px dashed var(--border);border-radius:4px;
+  padding:16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap
+}
 .csv-label{font-size:12px;color:var(--text2);flex:1;min-width:160px}
 .csv-label strong{color:var(--c1)}
-.btn-sm{height:34px;padding:0 14px;border-radius:7px;border:1px solid var(--border);
+.btn-sm{
+  height:34px;padding:0 14px;border-radius:4px;border:1px solid var(--border);
   background:var(--surf);color:var(--text2);font-size:12px;font-weight:500;
-  font-family:inherit;cursor:pointer;transition:all .15s;white-space:nowrap}
+  font-family:"UD Digi Kyokasho NP-R","BIZ UDGothic","Meiryo",sans-serif;
+  cursor:pointer;transition:all .15s;white-space:nowrap
+}
 .btn-sm:hover{background:var(--c1a);border-color:var(--c1);color:var(--c1)}
 
 /* ═══════════════════════════════════════
    Nav Buttons
 ═══════════════════════════════════════ */
 .nav-row{display:flex;gap:12px;margin-top:20px;justify-content:flex-end}
-.btn-back{height:44px;padding:0 24px;border-radius:9px;border:1.5px solid var(--border);
+.btn-back{
+  height:44px;padding:0 24px;border-radius:4px;border:1.5px solid var(--border);
   background:var(--surf);color:var(--text2);font-size:14px;font-weight:500;
-  font-family:inherit;cursor:pointer;transition:all .15s}
+  font-family:"UD Digi Kyokasho NP-R","BIZ UDGothic","Meiryo",sans-serif;cursor:pointer;transition:all .15s
+}
 .btn-back:hover{border-color:var(--c1);color:var(--c1)}
-.btn-next,.btn-run{height:44px;padding:0 32px;border-radius:9px;border:none;
-  background:var(--c1);color:#fff;font-size:14px;font-weight:400;
-  font-family:inherit;cursor:pointer;letter-spacing:0.06em;transition:all .15s}
-.btn-next:hover,.btn-run:hover{background:var(--c2);box-shadow:0 0 0 2px var(--gold-bdr)}
+.btn-next,.btn-run{
+  height:44px;padding:0 32px;border-radius:4px;border:none;
+  background:var(--c2);color:#fff;font-size:14px;font-weight:400;
+  font-family:"UD Digi Kyokasho NP-R","BIZ UDGothic","Meiryo",sans-serif;
+  cursor:pointer;letter-spacing:0.06em;transition:all .15s
+}
+.btn-next:hover,.btn-run:hover{background:var(--c1);box-shadow:0 0 0 2px var(--accent-bdr)}
 .btn-next:active,.btn-run:active{transform:scale(0.98)}
-.btn-run{background:var(--c1);border:1px solid var(--gold-bdr);padding:0 48px;height:48px;font-size:15px}
+.btn-run{background:var(--c1);border:1px solid var(--accent-bdr);padding:0 48px;height:48px;font-size:15px}
 
 /* ═══════════════════════════════════════
    Phase panels
@@ -156,34 +199,56 @@ input[type="file"]{padding:8px 12px;height:auto;cursor:pointer;font-size:13px}
 /* ═══════════════════════════════════════
    Results
 ═══════════════════════════════════════ */
-.res-header{background:var(--surf);border:1px solid var(--border2);border-radius:12px;
-  padding:20px 24px;margin-bottom:16px;box-shadow:var(--shadow);display:flex;align-items:center;gap:16px}
-.res-avatar{width:44px;height:44px;border-radius:10px;background:var(--c1);
+.res-header{
+  background:var(--surf);border:1px solid var(--border);border-radius:6px;
+  padding:20px 24px;margin-bottom:16px;box-shadow:var(--shadow);display:flex;align-items:center;gap:16px
+}
+.res-avatar{
+  width:44px;height:44px;border-radius:6px;background:var(--c1);
   display:flex;align-items:center;justify-content:center;color:#fff;font-weight:500;
-  font-size:16px;flex-shrink:0}
-.res-company{font-size:17px;font-weight:400;color:var(--c1);font-family:'Cormorant Garamond',serif;letter-spacing:0.03em}
+  font-size:16px;flex-shrink:0
+}
+.res-company{
+  font-size:17px;font-weight:400;color:var(--c1);
+  font-family:"UD Digi Kyokasho NP-R","BIZ UDGothic","Meiryo",sans-serif;letter-spacing:0.02em
+}
 .res-sub{font-size:12px;color:var(--text2);margin-top:2px}
 
 /* Gauge */
 .gauge-wrap{display:flex;flex-direction:column;align-items:center;padding:20px}
 .gauge-svg{width:180px;height:100px;overflow:visible}
-.gauge-score{font-size:32px;font-weight:400;fill:var(--c1);font-family:'Cormorant Garamond',serif}
-.gauge-max{font-size:13px;fill:var(--text3);font-family:'Hiragino Kaku Gothic ProN',sans-serif}
-.rank-tag{display:inline-block;margin-top:10px;padding:4px 16px;border-radius:20px;
-  font-size:13px;font-weight:500;border:1.5px solid}
+.gauge-score{
+  font-size:32px;font-weight:400;fill:var(--c1);
+  font-family:"UD Digi Kyokasho NP-R","BIZ UDGothic","Meiryo",sans-serif
+}
+.gauge-max{
+  font-size:13px;fill:var(--text3);
+  font-family:"UD Digi Kyokasho NP-R","BIZ UDGothic","Meiryo",sans-serif
+}
+.rank-tag{
+  display:inline-block;margin-top:10px;padding:4px 16px;border-radius:3px;
+  font-size:13px;font-weight:500;border:1.5px solid
+}
 
 /* KPI */
 .kpi-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:16px}
 @media(max-width:540px){.kpi-row{grid-template-columns:1fr 1fr}}
-.kpi{background:var(--surf2);border:1px solid var(--border2);border-radius:10px;padding:14px}
-.kpi-label{font-size:11px;font-weight:400;color:var(--text2);letter-spacing:0.08em;
-  text-transform:uppercase;margin-bottom:6px}
-.kpi-val{font-size:22px;font-weight:400;color:var(--c1);font-family:'Cormorant Garamond',serif}
+.kpi{background:var(--surf2);border:1px solid var(--border);border-radius:4px;padding:14px}
+.kpi-label{
+  font-size:11px;font-weight:400;color:var(--text2);letter-spacing:0.08em;
+  text-transform:uppercase;margin-bottom:6px
+}
+.kpi-val{
+  font-size:22px;font-weight:400;color:var(--c1);
+  font-family:"UD Digi Kyokasho NP-R","BIZ UDGothic","Meiryo",sans-serif
+}
 .kpi-unit{font-size:12px;font-weight:400;margin-left:2px}
 
 /* Route banner */
-.route-banner{border-radius:10px;padding:14px 20px;font-size:15px;font-weight:500;
-  margin-bottom:8px;border-left:4px solid;letter-spacing:0.02em}
+.route-banner{
+  border-radius:4px;padding:14px 20px;font-size:15px;font-weight:500;
+  margin-bottom:8px;border-left:4px solid;letter-spacing:0.02em
+}
 .route-A{background:var(--green-bg);border-color:var(--green-bdr);color:var(--green)}
 .route-B{background:var(--lime-bg);border-color:var(--lime-bdr);color:var(--lime)}
 .route-C{background:var(--amber-bg);border-color:var(--amber-bdr);color:var(--amber)}
@@ -192,41 +257,65 @@ input[type="file"]{padding:8px 12px;height:auto;cursor:pointer;font-size:13px}
 /* Score breakdown */
 .bd-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
 @media(max-width:540px){.bd-row{grid-template-columns:1fr}}
-.sc-card{background:var(--surf2);border:1px solid var(--border2);border-radius:10px;padding:14px}
-.sc-label{font-size:11px;font-weight:400;color:var(--text2);letter-spacing:0.08em;
-  text-transform:uppercase;margin-bottom:6px}
-.sc-val{font-size:24px;font-weight:400;color:var(--c1);font-family:'Cormorant Garamond',serif;margin-bottom:8px}
-.prog-track{height:5px;background:var(--border2);border-radius:3px;overflow:hidden;margin-bottom:6px}
-.prog-bar{height:100%;background:var(--gold);border-radius:3px;transition:width .8s cubic-bezier(.4,0,.2,1)}
+.sc-card{background:var(--surf2);border:1px solid var(--border);border-radius:4px;padding:14px}
+.sc-label{
+  font-size:11px;font-weight:400;color:var(--text2);letter-spacing:0.08em;
+  text-transform:uppercase;margin-bottom:6px
+}
+.sc-val{
+  font-size:24px;font-weight:400;color:var(--c1);
+  font-family:"UD Digi Kyokasho NP-R","BIZ UDGothic","Meiryo",sans-serif;margin-bottom:8px
+}
+.prog-track{height:4px;background:var(--border2);border-radius:2px;overflow:hidden;margin-bottom:6px}
+.prog-bar{height:100%;background:var(--c2);border-radius:2px;transition:width .8s cubic-bezier(.4,0,.2,1)}
 .sc-detail{font-size:12px;color:var(--text3)}
 
 /* Flags */
-.flag-item{background:var(--amber-bg);border-left:3px solid var(--amber-bdr);border-radius:8px;
-  padding:9px 14px;font-size:12px;color:var(--amber);font-weight:500;margin-bottom:8px}
-.no-flag{background:var(--green-bg);border:1px solid var(--green-bdr);border-radius:8px;
-  padding:10px 14px;font-size:13px;color:var(--green);font-weight:500}
+.flag-item{
+  background:var(--amber-bg);border-left:3px solid var(--amber-bdr);border-radius:4px;
+  padding:9px 14px;font-size:12px;color:var(--amber);font-weight:500;margin-bottom:8px
+}
+.no-flag{
+  background:var(--green-bg);border:1px solid var(--green-bdr);border-radius:4px;
+  padding:10px 14px;font-size:13px;color:var(--green);font-weight:500
+}
 
 /* Result actions */
 .res-actions{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
-.btn-pdf{height:42px;padding:0 22px;border-radius:9px;border:1.5px solid var(--c1);
-  background:var(--c1);color:#fff;font-size:13px;font-weight:500;font-family:inherit;cursor:pointer;transition:all .15s}
+.btn-pdf{
+  height:42px;padding:0 22px;border-radius:4px;border:1.5px solid var(--c1);
+  background:var(--c1);color:#fff;font-size:13px;font-weight:500;
+  font-family:"UD Digi Kyokasho NP-R","BIZ UDGothic","Meiryo",sans-serif;cursor:pointer;transition:all .15s
+}
 .btn-pdf:hover{background:var(--c2);border-color:var(--c2)}
-.btn-csv-out{height:42px;padding:0 22px;border-radius:9px;border:1.5px solid var(--border);
-  background:var(--surf);color:var(--text2);font-size:13px;font-weight:500;font-family:inherit;cursor:pointer;transition:all .15s}
+.btn-csv-out{
+  height:42px;padding:0 22px;border-radius:4px;border:1.5px solid var(--border);
+  background:var(--surf);color:var(--text2);font-size:13px;font-weight:500;
+  font-family:"UD Digi Kyokasho NP-R","BIZ UDGothic","Meiryo",sans-serif;cursor:pointer;transition:all .15s
+}
 .btn-csv-out:hover{border-color:var(--c1);color:var(--c1)}
-.btn-restart{height:42px;padding:0 22px;border-radius:9px;border:1.5px solid var(--border);
-  background:var(--surf);color:var(--text2);font-size:13px;font-weight:500;font-family:inherit;cursor:pointer;transition:all .15s}
+.btn-restart{
+  height:42px;padding:0 22px;border-radius:4px;border:1.5px solid var(--border);
+  background:var(--surf);color:var(--text2);font-size:13px;font-weight:500;
+  font-family:"UD Digi Kyokasho NP-R","BIZ UDGothic","Meiryo",sans-serif;cursor:pointer;transition:all .15s
+}
 .btn-restart:hover{border-color:var(--c1);color:var(--c1)}
 
-.disclaimer{font-size:12px;color:var(--text3);border-top:1px solid var(--border2);
-  padding-top:14px;margin-top:20px;line-height:1.8}
+.disclaimer{
+  font-size:12px;color:var(--text3);border-top:1px solid var(--border2);
+  padding-top:14px;margin-top:20px;line-height:1.8
+}
 .disc-summary{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:6px}
-.disc-toggle{background:none;border:1px solid var(--gold-bdr);border-radius:4px;
-  padding:3px 10px;font-size:11px;color:var(--text3);cursor:pointer;font-family:inherit;
-  transition:all .15s}
-.disc-toggle:hover{background:var(--gold-bg);color:var(--c1)}
-.disc-full{display:none;margin-top:10px;background:var(--surf2);border:1px solid var(--border2);
-  border-left:2px solid var(--gold-bdr);border-radius:6px;overflow:hidden}
+.disc-toggle{
+  background:none;border:1px solid var(--border);border-radius:3px;
+  padding:3px 10px;font-size:11px;color:var(--text3);cursor:pointer;
+  font-family:"UD Digi Kyokasho NP-R","BIZ UDGothic","Meiryo",sans-serif;transition:all .15s
+}
+.disc-toggle:hover{background:var(--accent-bg);color:var(--c1)}
+.disc-full{
+  display:none;margin-top:10px;background:var(--surf2);border:1px solid var(--border);
+  border-left:2px solid var(--c2);border-radius:4px;overflow:hidden
+}
 .disc-full.open{display:block}
 .disc-body{padding:14px 16px;font-size:11px;color:var(--text2);line-height:1.9;white-space:pre-wrap}
 .disc-body p{margin-bottom:10px}
@@ -254,7 +343,10 @@ input[type="file"]{padding:8px 12px;height:auto;cursor:pointer;font-size:13px}
    Utility
 ═══════════════════════════════════════ */
 .divider{border:none;border-top:1px solid var(--border2);margin:16px 0}
-.sec-subtitle{font-size:13px;font-weight:500;color:var(--c1);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border2)}
+.sec-subtitle{
+  font-size:13px;font-weight:500;color:var(--c1);margin-bottom:12px;
+  padding-bottom:8px;border-bottom:1px solid var(--border2)
+}
 
 /* ══════════════════════════════════════
    GATE MODAL
@@ -263,7 +355,7 @@ input[type="file"]{padding:8px 12px;height:auto;cursor:pointer;font-size:13px}
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.72);
+  background: rgba(0,0,0,0.60);
   z-index: 9000;
   align-items: center;
   justify-content: center;
@@ -273,13 +365,13 @@ input[type="file"]{padding:8px 12px;height:auto;cursor:pointer;font-size:13px}
 
 .gate-box {
   background: #fff;
-  border-radius: 12px;
+  border-radius: 6px;
   width: 100%;
   max-width: 540px;
   max-height: 90vh;
   overflow-y: auto;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.25);
-  font-family: 'Noto Sans JP', sans-serif;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.20);
+  font-family: "UD Digi Kyokasho NP-R","BIZ UDGothic","Meiryo",sans-serif;
 }
 
 /* ── Step A: 注意事項 ── */
@@ -289,20 +381,20 @@ input[type="file"]{padding:8px 12px;height:auto;cursor:pointer;font-size:13px}
 .gate-notice h2 {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #1a2540;
+  color: #2C3E50;
   margin-bottom: 16px;
-  border-bottom: 2px solid #c0392b;
+  border-bottom: 2px solid #4A5568;
   padding-bottom: 10px;
 }
 .gate-notice-body {
   font-size: 0.8rem;
-  color: #444;
+  color: #495057;
   line-height: 1.9;
   margin-bottom: 20px;
-  background: #f8f8f8;
-  border-radius: 6px;
+  background: #F8F9FA;
+  border-radius: 4px;
   padding: 14px 16px;
-  border-left: 3px solid #c0392b;
+  border-left: 3px solid #4A5568;
 }
 .gate-notice-body p { margin-bottom: 8px; }
 .gate-notice-body p:last-child { margin-bottom: 0; }
@@ -313,7 +405,7 @@ input[type="file"]{padding:8px 12px;height:auto;cursor:pointer;font-size:13px}
   margin-bottom: 20px;
   cursor: pointer;
   font-size: 0.82rem;
-  color: #333;
+  color: #333333;
   line-height: 1.6;
 }
 .gate-notice-agree input[type="checkbox"] {
@@ -321,7 +413,7 @@ input[type="file"]{padding:8px 12px;height:auto;cursor:pointer;font-size:13px}
   height: 18px;
   flex-shrink: 0;
   margin-top: 1px;
-  accent-color: #c0392b;
+  accent-color: #4A5568;
   cursor: pointer;
 }
 
@@ -334,14 +426,14 @@ input[type="file"]{padding:8px 12px;height:auto;cursor:pointer;font-size:13px}
 .gate-form h2 {
   font-size: 1.05rem;
   font-weight: 700;
-  color: #1a2540;
+  color: #2C3E50;
   margin-bottom: 6px;
-  border-bottom: 2px solid #c0392b;
+  border-bottom: 2px solid #4A5568;
   padding-bottom: 10px;
 }
 .gate-form-sub {
   font-size: 0.75rem;
-  color: #888;
+  color: #868E96;
   margin-bottom: 20px;
 }
 .gate-field {
@@ -351,7 +443,7 @@ input[type="file"]{padding:8px 12px;height:auto;cursor:pointer;font-size:13px}
   display: block;
   font-size: 0.75rem;
   font-weight: 600;
-  color: #444;
+  color: #495057;
   margin-bottom: 5px;
   letter-spacing: 0.03em;
 }
@@ -363,18 +455,18 @@ input[type="file"]{padding:8px 12px;height:auto;cursor:pointer;font-size:13px}
 .gate-input {
   width: 100%;
   padding: 10px 12px;
-  border: 1px solid #d0d0d0;
-  border-radius: 6px;
+  border: 1px solid #CED4DA;
+  border-radius: 4px;
   font-size: 0.85rem;
-  font-family: 'Noto Sans JP', sans-serif;
-  color: #222;
-  background: #fafafa;
+  font-family: "UD Digi Kyokasho NP-R","BIZ UDGothic","Meiryo",sans-serif;
+  color: #333333;
+  background: #F8F9FA;
   box-sizing: border-box;
   transition: border-color 0.2s;
 }
 .gate-input:focus {
   outline: none;
-  border-color: #1a2540;
+  border-color: #2C3E50;
   background: #fff;
 }
 .gate-input.err { border-color: #c0392b; }
@@ -389,7 +481,7 @@ input[type="file"]{padding:8px 12px;height:auto;cursor:pointer;font-size:13px}
   text-align: center;
   padding: 20px 0;
   display: none;
-  color: #888;
+  color: #868E96;
   font-size: 0.85rem;
 }
 .gate-sending.show { display: block; }
@@ -403,14 +495,14 @@ input[type="file"]{padding:8px 12px;height:auto;cursor:pointer;font-size:13px}
 .gate-pass h2 {
   font-size: 1.05rem;
   font-weight: 700;
-  color: #1a2540;
+  color: #2C3E50;
   margin-bottom: 8px;
-  border-bottom: 2px solid #c0392b;
+  border-bottom: 2px solid #4A5568;
   padding-bottom: 10px;
 }
 .gate-pass-msg {
   font-size: 0.82rem;
-  color: #555;
+  color: #495057;
   margin-bottom: 20px;
   line-height: 1.8;
 }
@@ -422,17 +514,17 @@ input[type="file"]{padding:8px 12px;height:auto;cursor:pointer;font-size:13px}
 .gate-pass-input {
   flex: 1;
   padding: 12px 14px;
-  border: 1.5px solid #d0d0d0;
-  border-radius: 6px;
+  border: 1.5px solid #CED4DA;
+  border-radius: 4px;
   font-size: 1rem;
   font-family: monospace;
   letter-spacing: 0.15em;
   text-align: center;
-  color: #222;
-  background: #fafafa;
+  color: #333333;
+  background: #F8F9FA;
   transition: border-color 0.2s;
 }
-.gate-pass-input:focus { outline: none; border-color: #1a2540; }
+.gate-pass-input:focus { outline: none; border-color: #2C3E50; }
 .gate-pass-input.err { border-color: #c0392b; }
 .gate-pass-err {
   font-size: 0.75rem;
@@ -443,16 +535,16 @@ input[type="file"]{padding:8px 12px;height:auto;cursor:pointer;font-size:13px}
 .gate-pass-err.show { display: block; }
 .gate-resend {
   font-size: 0.73rem;
-  color: #888;
+  color: #868E96;
   text-align: center;
   margin-top: 14px;
 }
 .gate-resend a {
-  color: #1a2540;
+  color: #2C3E50;
   cursor: pointer;
   text-decoration: underline;
 }
-.gate-resend a:hover { color: #c0392b; }
+.gate-resend a:hover { color: #4A5568; }
 
 /* ── Shared Buttons ── */
 .gate-btn {
@@ -460,29 +552,29 @@ input[type="file"]{padding:8px 12px;height:auto;cursor:pointer;font-size:13px}
   width: 100%;
   padding: 13px;
   border: none;
-  border-radius: 8px;
+  border-radius: 4px;
   font-size: 0.9rem;
   font-weight: 600;
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: "UD Digi Kyokasho NP-R","BIZ UDGothic","Meiryo",sans-serif;
   cursor: pointer;
   transition: all 0.2s;
   letter-spacing: 0.04em;
 }
 .gate-btn-primary {
-  background: #1a2540;
+  background: #2C3E50;
   color: #fff;
 }
-.gate-btn-primary:hover { background: #243356; transform: translateY(-1px); }
-.gate-btn-primary:disabled { background: #aaa; cursor: not-allowed; transform: none; }
+.gate-btn-primary:hover { background: #4A5568; transform: translateY(-1px); }
+.gate-btn-primary:disabled { background: #adb5bd; cursor: not-allowed; transform: none; }
 .gate-btn-secondary {
   background: transparent;
-  color: #888;
+  color: #868E96;
   font-size: 0.78rem;
   font-weight: 400;
   padding: 8px;
   margin-top: 6px;
 }
-.gate-btn-secondary:hover { color: #444; }
+.gate-btn-secondary:hover { color: #495057; }
 .gate-step-indicator {
   display: flex;
   gap: 6px;
@@ -492,11 +584,11 @@ input[type="file"]{padding:8px 12px;height:auto;cursor:pointer;font-size:13px}
 .gate-step-dot {
   width: 8px; height: 8px;
   border-radius: 50%;
-  background: #ddd;
+  background: #DEE2E6;
   transition: background 0.3s;
 }
-.gate-step-dot.active { background: #1a2540; }
-.gate-step-dot.done { background: #c0392b; }
+.gate-step-dot.active { background: #2C3E50; }
+.gate-step-dot.done { background: #4A5568; }
 
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
